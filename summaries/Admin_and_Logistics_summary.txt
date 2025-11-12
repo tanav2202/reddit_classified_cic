@@ -1,0 +1,6 @@
+Category: Admin and Logistics
+Number of posts: 2
+Prompt file: Admin_and_Logistics.jinja
+============================================================
+
+Discussions revolve around various administrative and logistical issues faced by students within the university setting. Topics include exceeding credit limits in course registrations ('CS301', 'MAT250'), fee payment complications, issues with official forms submission (e.g., financial aid forms, change-of-major forms), and registration problems such as late enrollment or missing prerequisites. Students express frustration and seek advice from each other on how to navigate these bureaucratic processes and find solutions to their problems.

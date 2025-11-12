@@ -1,0 +1,6 @@
+Category: General Sciences
+Number of posts: 16
+Prompt file: General_Sciences.jinja
+============================================================
+
+The discussions revolve around various grievances and concerns related to science courses, particularly in BIOL, PHYS, CHEM, and EOSC. Students express difficulties with lab protocols, midterm averages, and course transfers. There are also issues reported about prerequisites for certain courses causing frustration. Some students have raised concerns over the TA and instructor interactions, seeking improved communication and clarity in grading criteria. One specific issue mentioned is a discrepancy in the calculation of midterm averages for a particular PHYS course.

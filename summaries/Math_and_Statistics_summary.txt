@@ -1,0 +1,6 @@
+Category: Math and Statistics
+Number of posts: 10
+Prompt file: Math_and_Statistics.jinja
+============================================================
+
+Discussions revolve around Math and Statistics courses, specifically regarding course difficulty, instructor conduct, grading curves, midterms, and WebWork. In Mathematics (MATH135), students express concerns about the midterm exams being too difficult and the grading curve causing unnecessary stress. For Statistics (STAT200), students complain about the complexity of the WebWork problems and demand clarification on certain concepts from the instructor. In addition, there are discussions regarding potential course transfers to ease the workload.

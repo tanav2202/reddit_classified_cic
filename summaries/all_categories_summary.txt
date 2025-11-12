@@ -1,0 +1,87 @@
+REDDIT POSTS SUMMARY - ALL CATEGORIES
+============================================================
+
+
+============================================================
+CATEGORY: Computer Science
+============================================================
+
+The posts discuss various grievances and discussions faced by computer science students in their academic journey. One post highlights issues with the Python (CS101) course, where students complain about the complexity of assignments, lack of clear instructions, and insufficient feedback from instructors. Another post revolves around the Data Structures and Algorithms (CS202) course, where students express concerns over the difficulty level, particularly in understanding advanced concepts such as dynamic programming and graph theory. A third post discusses the computer labs' equipment maintenance issues, which affect students' ability to complete lab assignments on time due to frequent hardware malfunctions. Lastly, there are discussions about the need for more community-driven resources, such as study groups or tutoring services, to help students better understand complex topics and collaborate on projects.
+
+
+============================================================
+CATEGORY: Social
+============================================================
+
+The discussions on campus clubs, social life, events, and meeting people revolve around students expressing their excitement about various club activities such as photography, gaming, and volunteering. Some posts announce upcoming events like movie nights, game tournaments, and volunteer service projects. There are also discussions about overcoming social anxieties in these settings, with advice on finding a comfortable niche and approaching new people. Some students express concerns about the lack of diversity in certain clubs and suggest ways to improve inclusion. Additionally, there are posts seeking recommendations for clubs that cater to specific interests.
+
+
+============================================================
+CATEGORY: General Academics
+============================================================
+
+Discussions in the General Academics category primarily revolve around student concerns and community advice related to academic challenges. Topics include W standing issues (e.g., a student asking about the implications of receiving a 'W' for withdrawing from a course on their GPA), GPA concerns specific to majors and graduate school applications (e.g., a student seeking guidance on maintaining a high GPA in computer science for graduate school prospects), course load management (e.g., students sharing strategies for managing heavy course loads while balancing extracurricular activities), and academic policies (e.g., discussions about university-specific policies such as incomplete grades or late assignment submissions). Examples of posts include 'Is a W going to affect my GPA?' and 'What's the best way to manage a full course load while participating in athletics?'
+
+
+============================================================
+CATEGORY: General Sciences
+============================================================
+
+The discussions revolve around various grievances and concerns related to science courses, particularly in BIOL, PHYS, CHEM, and EOSC. Students express difficulties with lab protocols, midterm averages, and course transfers. There are also issues reported about prerequisites for certain courses causing frustration. Some students have raised concerns over the TA and instructor interactions, seeking improved communication and clarity in grading criteria. One specific issue mentioned is a discrepancy in the calculation of midterm averages for a particular PHYS course.
+
+
+============================================================
+CATEGORY: Math and Statistics
+============================================================
+
+Discussions revolve around Math and Statistics courses, specifically regarding course difficulty, instructor conduct, grading curves, midterms, and WebWork. In Mathematics (MATH135), students express concerns about the midterm exams being too difficult and the grading curve causing unnecessary stress. For Statistics (STAT200), students complain about the complexity of the WebWork problems and demand clarification on certain concepts from the instructor. In addition, there are discussions regarding potential course transfers to ease the workload.
+
+
+============================================================
+CATEGORY: Campus Spaces
+============================================================
+
+Discussions on campus spaces revolve around various issues and concerns related to specific buildings and areas. Posts include complaints about excessive noise in the library affecting study environments, concerns over poor conditions of gym facilities, discussions on the lack of suitable study spots, and queries regarding lost items. One post under the subject code 'LIB-NOISE' expressed frustration over the loud music and chatter in the library during study hours, while another post 'GYM-COND' highlighted the need for maintenance and cleanliness in the gym to prevent injuries and ensure a hygienic environment. Posts under 'STUDY-SPOTS' suggest that more quiet and secluded study areas are needed for students who prefer peaceful environments. Lastly, posts 'LOST-ITEM' indicate confusion regarding campus lost and found policies and procedures.
+
+
+============================================================
+CATEGORY: Career
+============================================================
+
+Discussions among students and community members focus on various aspects of job searching, internships, co-ops, and post-graduation career paths. Topics include interview tips such as preparing for behavioral questions and showcasing transferable skills. The job market outlook is a concern, with discussions about the impact of COVID-19 on hiring and job security. Resume building strategies are frequently discussed, including tailoring resumes to specific jobs, using action verbs, and highlighting relevant experiences. Co-op experiences are shared, providing insights into the benefits and challenges of co-ops. There are also discussions about the potential impact of GPA on hiring, with some students expressing concerns about the emphasis placed on GPA and others offering reassurances that it is just one factor in the hiring process.
+
+
+============================================================
+CATEGORY: Business and Econ
+============================================================
+
+Discussions in Business and Economics courses revolve around student grievances and community concerns. For instance, students in COMM 101 express frustration with the subjectivity and inconsistency in grading, while those in ECON 203 voice their concerns about the difficulty level of midterms. The program structure of the Business and Economics major is also a topic of debate, with some students feeling that the co-op interviews preparation could be improved to better prepare them for real-world situations.
+
+
+============================================================
+CATEGORY: Housing and Residence
+============================================================
+
+Discussions on campus and off-campus living issues are prevalent among students and community members. Topics include the ongoing YRH waitlist for on-campus housing, lease agreements, roommate disagreements, parking concerns, and maintenance issues in both on- and off-campus residences. Students have expressed frustration over the lengthy YRH waitlist, suggesting possible solutions such as increasing the number of dorm rooms or offering financial aid for off-campus housing. Lease agreement discussions revolve around fair terms, rent prices, and pet policies. Roommate issues frequently center around cleanliness, noise levels, and personal space. Parking problems are a recurring theme, with students seeking more designated spaces on campus and solutions for off-campus parking woes. Maintenance concerns span from repair requests taking too long to be addressed in both on- and off-campus settings.
+
+
+============================================================
+CATEGORY: Admin and Logistics
+============================================================
+
+Discussions revolve around various administrative and logistical issues faced by students within the university setting. Topics include exceeding credit limits in course registrations ('CS301', 'MAT250'), fee payment complications, issues with official forms submission (e.g., financial aid forms, change-of-major forms), and registration problems such as late enrollment or missing prerequisites. Students express frustration and seek advice from each other on how to navigate these bureaucratic processes and find solutions to their problems.
+
+
+============================================================
+CATEGORY: Arts and Humanities
+============================================================
+
+Discussions among students and community members in Arts and Humanities courses revolve around several grievances and concerns. One common issue is essay grading, with students expressing dissatisfaction over perceived inconsistencies and lack of clear guidelines. Course-specific difficulties are also highlighted, such as complex readings and heavy workloads in literature and philosophy classes. Political discussions within the context of certain course materials have sparked debates and disagreements among students, leading to tense exchanges. Program requirements, particularly those related to prerequisites and electives, have also been a subject of discussion.
+
+
+============================================================
+CATEGORY: Rants
+============================================================
+
+Student and community grievances discussed in the Reddit posts revolve around non-academic issues on campus. These include bike thefts, noise pollution, and infrastructure complaints. For instance, one student shared an experience of having their bike stolen from a secured bike rack, expressing concern over the university's security measures. Another user complained about excessive noise from construction work near dormitories, affecting sleep quality. Additionally, there were discussions about inadequate lighting in certain campus areas, particularly at night, and concerns regarding general campus cleanliness.
+

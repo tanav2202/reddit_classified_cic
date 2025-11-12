@@ -1,0 +1,6 @@
+Category: Housing and Residence
+Number of posts: 3
+Prompt file: Housing_and_Residence.jinja
+============================================================
+
+Discussions on campus and off-campus living issues are prevalent among students and community members. Topics include the ongoing YRH waitlist for on-campus housing, lease agreements, roommate disagreements, parking concerns, and maintenance issues in both on- and off-campus residences. Students have expressed frustration over the lengthy YRH waitlist, suggesting possible solutions such as increasing the number of dorm rooms or offering financial aid for off-campus housing. Lease agreement discussions revolve around fair terms, rent prices, and pet policies. Roommate issues frequently center around cleanliness, noise levels, and personal space. Parking problems are a recurring theme, with students seeking more designated spaces on campus and solutions for off-campus parking woes. Maintenance concerns span from repair requests taking too long to be addressed in both on- and off-campus settings.

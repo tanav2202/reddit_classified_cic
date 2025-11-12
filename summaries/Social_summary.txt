@@ -1,0 +1,6 @@
+Category: Social
+Number of posts: 58
+Prompt file: Social_Events.jinja
+============================================================
+
+The discussions on campus clubs, social life, events, and meeting people revolve around students expressing their excitement about various club activities such as photography, gaming, and volunteering. Some posts announce upcoming events like movie nights, game tournaments, and volunteer service projects. There are also discussions about overcoming social anxieties in these settings, with advice on finding a comfortable niche and approaching new people. Some students express concerns about the lack of diversity in certain clubs and suggest ways to improve inclusion. Additionally, there are posts seeking recommendations for clubs that cater to specific interests.

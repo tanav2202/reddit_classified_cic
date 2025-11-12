@@ -1,0 +1,6 @@
+Category: Campus Spaces
+Number of posts: 9
+Prompt file: Campus_Spaces.jinja
+============================================================
+
+Discussions on campus spaces revolve around various issues and concerns related to specific buildings and areas. Posts include complaints about excessive noise in the library affecting study environments, concerns over poor conditions of gym facilities, discussions on the lack of suitable study spots, and queries regarding lost items. One post under the subject code 'LIB-NOISE' expressed frustration over the loud music and chatter in the library during study hours, while another post 'GYM-COND' highlighted the need for maintenance and cleanliness in the gym to prevent injuries and ensure a hygienic environment. Posts under 'STUDY-SPOTS' suggest that more quiet and secluded study areas are needed for students who prefer peaceful environments. Lastly, posts 'LOST-ITEM' indicate confusion regarding campus lost and found policies and procedures.

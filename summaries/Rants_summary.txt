@@ -1,0 +1,6 @@
+Category: Rants
+Number of posts: 1
+Prompt file: Rants_and_Complaints.jinja
+============================================================
+
+Student and community grievances discussed in the Reddit posts revolve around non-academic issues on campus. These include bike thefts, noise pollution, and infrastructure complaints. For instance, one student shared an experience of having their bike stolen from a secured bike rack, expressing concern over the university's security measures. Another user complained about excessive noise from construction work near dormitories, affecting sleep quality. Additionally, there were discussions about inadequate lighting in certain campus areas, particularly at night, and concerns regarding general campus cleanliness.

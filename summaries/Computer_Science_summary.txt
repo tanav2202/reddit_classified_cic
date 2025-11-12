@@ -1,0 +1,6 @@
+Category: Computer Science
+Number of posts: 18
+Prompt file: Computer_Science.jinja
+============================================================
+
+The posts discuss various grievances and discussions faced by computer science students in their academic journey. One post highlights issues with the Python (CS101) course, where students complain about the complexity of assignments, lack of clear instructions, and insufficient feedback from instructors. Another post revolves around the Data Structures and Algorithms (CS202) course, where students express concerns over the difficulty level, particularly in understanding advanced concepts such as dynamic programming and graph theory. A third post discusses the computer labs' equipment maintenance issues, which affect students' ability to complete lab assignments on time due to frequent hardware malfunctions. Lastly, there are discussions about the need for more community-driven resources, such as study groups or tutoring services, to help students better understand complex topics and collaborate on projects.

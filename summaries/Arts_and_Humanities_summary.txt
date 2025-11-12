@@ -1,0 +1,6 @@
+Category: Arts and Humanities
+Number of posts: 2
+Prompt file: Arts_and_Humanities.jinja
+============================================================
+
+Discussions among students and community members in Arts and Humanities courses revolve around several grievances and concerns. One common issue is essay grading, with students expressing dissatisfaction over perceived inconsistencies and lack of clear guidelines. Course-specific difficulties are also highlighted, such as complex readings and heavy workloads in literature and philosophy classes. Political discussions within the context of certain course materials have sparked debates and disagreements among students, leading to tense exchanges. Program requirements, particularly those related to prerequisites and electives, have also been a subject of discussion.

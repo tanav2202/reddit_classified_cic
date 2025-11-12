@@ -1,0 +1,6 @@
+Category: Career
+Number of posts: 9
+Prompt file: Career.jinja
+============================================================
+
+Discussions among students and community members focus on various aspects of job searching, internships, co-ops, and post-graduation career paths. Topics include interview tips such as preparing for behavioral questions and showcasing transferable skills. The job market outlook is a concern, with discussions about the impact of COVID-19 on hiring and job security. Resume building strategies are frequently discussed, including tailoring resumes to specific jobs, using action verbs, and highlighting relevant experiences. Co-op experiences are shared, providing insights into the benefits and challenges of co-ops. There are also discussions about the potential impact of GPA on hiring, with some students expressing concerns about the emphasis placed on GPA and others offering reassurances that it is just one factor in the hiring process.

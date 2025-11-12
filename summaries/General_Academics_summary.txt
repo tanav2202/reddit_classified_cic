@@ -1,0 +1,6 @@
+Category: General Academics
+Number of posts: 14
+Prompt file: General_Academics.jinja
+============================================================
+
+Discussions in the General Academics category primarily revolve around student concerns and community advice related to academic challenges. Topics include W standing issues (e.g., a student asking about the implications of receiving a 'W' for withdrawing from a course on their GPA), GPA concerns specific to majors and graduate school applications (e.g., a student seeking guidance on maintaining a high GPA in computer science for graduate school prospects), course load management (e.g., students sharing strategies for managing heavy course loads while balancing extracurricular activities), and academic policies (e.g., discussions about university-specific policies such as incomplete grades or late assignment submissions). Examples of posts include 'Is a W going to affect my GPA?' and 'What's the best way to manage a full course load while participating in athletics?'

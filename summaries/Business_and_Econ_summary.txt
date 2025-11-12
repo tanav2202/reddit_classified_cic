@@ -1,0 +1,6 @@
+Category: Business and Econ
+Number of posts: 7
+Prompt file: Business_and_Econ.jinja
+============================================================
+
+Discussions in Business and Economics courses revolve around student grievances and community concerns. For instance, students in COMM 101 express frustration with the subjectivity and inconsistency in grading, while those in ECON 203 voice their concerns about the difficulty level of midterms. The program structure of the Business and Economics major is also a topic of debate, with some students feeling that the co-op interviews preparation could be improved to better prepare them for real-world situations.
