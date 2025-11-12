@@ -1,0 +1,4 @@
+praw>=7.7.1
+pandas>=2.0.0
+pyarrow>=10.0.0
+ollama>=0.1.0
