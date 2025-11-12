@@ -1,184 +1,134 @@
-# Reddit API Fetcher
+# Reddit Classified CIC
 
-A Python script to scrape posts and comments from Reddit subreddits using the Reddit API (PRAW).
+## Overview
 
-## Setup
+Reddit Classified CIC is a small end-to-end pipeline for collecting recent posts from a subreddit and categorising them with a large language model (LLM). The project consists of two core steps:
 
-### 1. Install Dependencies
+- **Data collection** – `reddit_fetcher.py` pulls posts (and their comments) from Reddit during a configurable date window and stores them as Parquet files.
+- **LLM-based categorisation** – `main.py` loads the collected data and applies a structured prompt (stored in `prompts/classify_post.jinja`) through an LLM client defined in `llm_classifier.py`, adding a `category` column to the dataset.
+
+Both steps can be run together through `main.py`, which will fetch new data when it is missing and then classify each post.
+
+## Project Structure
+
+```
+reddit_classified_cic/
+├── main.py                       # Orchestrates fetching + classification workflow
+├── reddit_fetcher.py             # Reddit ingestion utilities (PRAW based)
+├── llm_classifier.py             # Helpers for Ollama / Bedrock / OpenAI classification
+├── prompts/
+│   └── classify_post.jinja       # Jinja template defining the classification prompt
+├── reddit_data/                  # Raw Parquet exports (created at runtime)
+├── reddit_data_classified/       # Classified Parquet outputs (created at runtime)
+└── requirements.txt              # Minimal dependency list for the fetcher
+```
+
+## Prerequisites
+
+- Python 3.10 or newer
+- Reddit API credentials (client id, client secret, user agent)
+- Local Ollama installation (for the default `mistral:latest` model), or AWS Bedrock credentials if you choose that backend
+- Optional: An OpenAI API key if you intend to use GPT models via the helper in `llm_classifier.py`
+
+### Python Dependencies
+
+Install the core dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2. Get Reddit API Credentials
+The classification helpers additionally rely on several LangChain integrations and utilities. Install them before running `main.py`:
 
-1. Go to https://www.reddit.com/prefs/apps
-2. Click "create another app" or "create app"
-3. Choose "script" as the app type
-4. Fill in the details:
-   - **Name**: Your app name (e.g., "MyRedditScraper")
-   - **Description**: Brief description
-   - **Redirect URI**: `http://localhost:8080` (or any valid URL)
-5. Click "create app"
-6. Note down:
-   - **Client ID**: The string under your app name (looks like: `abc123def456`)
-   - **Client Secret**: The "secret" field (looks like: `xyz789_secret_key`)
-   - **User Agent**: Format: `"YourAppName/1.0 by YourRedditUsername"`
-
-### 3. Set Environment Variables
-
-You have several options to set environment variables:
-
-#### Option A: Set in Terminal (Temporary - Current Session Only)
-
-**For macOS/Linux (zsh/bash):**
 ```bash
-export REDDIT_CLIENT_ID="your_client_id_here"
-export REDDIT_CLIENT_SECRET="your_client_secret_here"
+pip install "langchain>=0.2" "langchain-core>=0.2" langchain-community langchain-aws langchain-ollama langchain-openai jinja2 tqdm
+```
+
+> **Tip:** Bundle the extra packages into a virtual environment so they stay isolated from your system Python.
+
+## Configure Reddit API Access
+
+Set the credentials as environment variables so `reddit_fetcher.py` can authenticate:
+
+```bash
+export REDDIT_CLIENT_ID="your_client_id"
+export REDDIT_CLIENT_SECRET="your_client_secret"
 export REDDIT_USER_AGENT="YourAppName/1.0 by YourRedditUsername"
 ```
 
-**For Windows (PowerShell):**
+On Windows (PowerShell):
+
 ```powershell
-$env:REDDIT_CLIENT_ID="your_client_id_here"
-$env:REDDIT_CLIENT_SECRET="your_client_secret_here"
+$env:REDDIT_CLIENT_ID="your_client_id"
+$env:REDDIT_CLIENT_SECRET="your_client_secret"
 $env:REDDIT_USER_AGENT="YourAppName/1.0 by YourRedditUsername"
 ```
 
-**For Windows (Command Prompt):**
-```cmd
-set REDDIT_CLIENT_ID=your_client_id_here
-set REDDIT_CLIENT_SECRET=your_client_secret_here
-set REDDIT_USER_AGENT=YourAppName/1.0 by YourRedditUsername
-```
+Persist them in your shell profile (e.g., `~/.zshrc`, `~/.bashrc`) if you plan to use the script frequently. Never commit these secrets to source control.
 
-#### Option B: Set Permanently in Shell Config (Recommended)
+## Configure the LLM Backend
 
-**For macOS/Linux (zsh - default on macOS):**
-Add to `~/.zshrc`:
-```bash
-export REDDIT_CLIENT_ID="your_client_id_here"
-export REDDIT_CLIENT_SECRET="your_client_secret_here"
-export REDDIT_USER_AGENT="YourAppName/1.0 by YourRedditUsername"
-```
+### Ollama (default)
 
-Then reload:
-```bash
-source ~/.zshrc
-```
+1. Install and start [Ollama](https://ollama.com/).
+2. Pull a suitable model – the project defaults to `mistral:latest` but any text-capable model will work:
 
-**For macOS/Linux (bash):**
-Add to `~/.bashrc` or `~/.bash_profile`:
-```bash
-export REDDIT_CLIENT_ID="your_client_id_here"
-export REDDIT_CLIENT_SECRET="your_client_secret_here"
-export REDDIT_USER_AGENT="YourAppName/1.0 by YourRedditUsername"
-```
+   ```bash
+   ollama pull mistral:latest
+   ```
 
-Then reload:
-```bash
-source ~/.bashrc
-```
+3. Ensure the Ollama service is running before invoking `main.py`.
 
-**For Windows:**
-1. Open System Properties → Environment Variables
-2. Add new User variables:
-   - `REDDIT_CLIENT_ID` = `your_client_id_here`
-   - `REDDIT_CLIENT_SECRET` = `your_client_secret_here`
-   - `REDDIT_USER_AGENT` = `YourAppName/1.0 by YourRedditUsername`
-3. Restart your terminal/IDE
+### AWS Bedrock (optional)
 
-#### Option C: Use a .env File (Alternative - Requires python-dotenv)
+If you prefer Bedrock:
 
-1. Create a `.env` file in the project directory:
-```bash
-REDDIT_CLIENT_ID=your_client_id_here
-REDDIT_CLIENT_SECRET=your_client_secret_here
-REDDIT_USER_AGENT=YourAppName/1.0 by YourRedditUsername
-```
+- Configure AWS credentials with permission to invoke the desired model (e.g., Claude 3 Sonnet).
+- Uncomment `llm = get_bedrock_model()` in `main.py` and adjust the `model_id`/region inside `llm_classifier.py` if needed.
 
-2. Install python-dotenv:
-```bash
-pip install python-dotenv
-```
+### OpenAI (optional)
 
-3. Add to the top of your script:
-```python
-from dotenv import load_dotenv
-load_dotenv()
-```
+`llm_classifier.py` also exposes `get_openai_model`. Supply an API key through the standard `OPENAI_API_KEY` environment variable and switch the call in `main.py` accordingly.
 
-**Important**: Add `.env` to `.gitignore` to avoid committing secrets!
+## Running the Pipeline
 
-## Usage
+1. Activate your virtual environment (optional but recommended).
+2. Ensure Reddit credentials and the chosen LLM backend are configured and running.
+3. Execute the main workflow:
 
-### Run the Script
+   ```bash
+   python main.py
+   ```
 
-```bash
-python reddit_fetcher.py
-```
+What happens:
 
-The script will:
-- Scrape new posts from the last 7 days from each subreddit
-- Fetch all comments for each post
-- Save to CSV files with date range in filename
-- Output format: `{subreddit_name}_{today_date}_{end_date}.csv`
+- The script computes a seven-day window ending “now”.
+- It checks `reddit_data/<subreddit>_<today>_<start>.parquet`; if missing, it fetches posts from the `subreddit` (default `ubc`) within that window and saves the raw Parquet file.
+- It loads the Parquet data, combines `Title` and `Post_Text`, and calls the LLM using the structured prompt.
+- A `category` column is added and the classified dataset is saved to `reddit_data_classified/` with the same filename convention.
 
-### Customize Subreddits
+Progress updates are displayed via `tqdm` while classifying.
 
-Edit the `subreddit_names` list in `reddit_fetcher.py`:
+## Customisation
 
-```python
-subreddit_names = ['ubc', 'python', 'programming']
-```
+- **Subreddit** – change the `subreddit` variable in `main.py`.
+- **Date range** – adjust `today_date` and `old_date` or the `days_back` calculation.
+- **Prompt / Categories** – edit `prompts/classify_post.jinja` to redefine the allowed categories or instructions to the model.
+- **LLM model** – change the call to `get_ollama_model("mistral:latest")` (or use `get_bedrock_model` / `get_openai_model`).
+- **Output locations** – modify the `reddit_data` and `reddit_data_classified` folder paths.
 
-### Customize Date Range
+## Output Files
 
-Edit the date logic in the script:
-
-```python
-manual_date = None  # Set to dt.datetime(2025, 1, 15) to scrape from a specific date
-current_date = manual_date or dt.datetime.utcnow()
-end_date = current_date - dt.timedelta(days=7)  # Change 7 to adjust range
-```
-
-## Output Format
-
-Each CSV file contains:
-- **Title**: Post title
-- **Post_Text**: Full text of the post
-- **Post_URL**: URL of the post
-- **Comments**: List of all comments (as a list in CSV)
-- **Created_UTC**: Post creation timestamp
+- **Raw data:** `reddit_data/<subreddit>_<today>_<start>.parquet`
+  - Columns include `Title`, `Post_Text`, `Post_URL`, `Comments`, `Created_UTC`.
+- **Classified data:** `reddit_data_classified/<subreddit>_<today>_<start>.parquet`
+  - Adds a `category` column produced by the LLM.
 
 ## Troubleshooting
 
-### "Missing required environment variables" Error
-
-Make sure you've set all three environment variables:
-- `REDDIT_CLIENT_ID`
-- `REDDIT_CLIENT_SECRET`
-- `REDDIT_USER_AGENT`
-
-Verify they're set:
-```bash
-echo $REDDIT_CLIENT_ID
-echo $REDDIT_CLIENT_SECRET
-echo $REDDIT_USER_AGENT
-```
-
-### API Rate Limits
-
-Reddit's API has rate limits:
-- 60 requests per minute for authenticated requests
-- 30 requests per minute for unauthenticated requests
-
-If you hit rate limits, the script will pause automatically.
-
-## Security Notes
-
-- **Never commit your credentials to git**
-- Use environment variables or `.env` files (and add `.env` to `.gitignore`)
-- Keep your `client_secret` private
-- Don't share your Reddit API credentials
+- **Zero rows fetched** – ensure your date window is sensible and that the subreddit has recent activity. The script only inspects the newest ~1000 posts.
+- **“Missing required environment variables”** – confirm the Reddit credentials are exported in your shell session.
+- **Ollama model errors** – verify the model name matches one you have pulled locally. Use `ollama list` to inspect installed models.
+- **LangChain import errors** – double-check that the optional dependencies listed above are installed.
+- **LLM produces unexpected categories** – refine `prompts/classify_post.jinja`, add explicit examples, or adjust the model/temperature settings in `llm_classifier.py`.
 
